@@ -17,7 +17,6 @@ class Attention(Layer):
         self.optimizer = Adam()
 
     def build(self, input_shape):
-        # Initialize weights
         self.wk = self.add_weight(shape=(self.d_w, self.d_w), initializer="random_normal", trainable=True, name="wk")
         self.bk = self.add_weight(shape=(self.d_w,), initializer="random_normal", trainable=True, name="bk")
         self.wq = self.add_weight(shape=(self.d_w, self.d_w), initializer="random_normal", trainable=True, name="wq")
